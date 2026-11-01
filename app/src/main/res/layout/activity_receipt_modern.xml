@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Receipt Card Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardReceipt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface_card"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <!-- Header Logo -->
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="EOTC Logo"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Ethiopian Orthodox Tewahedo Church"
+                    android:textColor="@color/primary_navy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReceiptParishName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="St. Mary Cathedral Parish"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="@color/divider_color" />
+
+                <!-- Success Badge -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#E8F5E9"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="OFFICIAL DIGITAL RECEIPT"
+                    android:textColor="@color/success_green"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Amount -->
+                <TextView
+                    android:id="@+id/tvReceiptAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="ETB 2,500.00"
+                    android:textColor="@color/primary_navy"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReceiptCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Monthly Tithe Contribution (10%)"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="@color/divider_color" />
+
+                <!-- Transaction Details Grid -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1">
+
+                    <TableRow android:layout_marginVertical="4dp">
+                        <TextView android:text="Reference:" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvReceiptRef" android:gravity="end" android:text="REC-982341" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_marginVertical="4dp">
+                        <TextView android:text="Payer Name:" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvReceiptPayer" android:gravity="end" android:text="Abebe Bikila" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_marginVertical="4dp">
+                        <TextView android:text="Payment Method:" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvReceiptMethod" android:gravity="end" android:text="telebirr" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_marginVertical="4dp">
+                        <TextView android:text="Date &amp; Time:" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvReceiptDate" android:gravity="end" android:text="May 12, 2026 10:30 AM" android:textColor="@color/text_primary" android:textSize="13sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Action Buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrintReceipt"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/primary_navy"
+            android:text="Download / Print PDF Receipt"
+            android:textColor="@color/text_on_dark"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardReceipt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
